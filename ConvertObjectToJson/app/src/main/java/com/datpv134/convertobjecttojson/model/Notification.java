@@ -1,19 +1,18 @@
-package com.datpv134.convertobjecttojson;
+package com.datpv134.convertobjecttojson.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Notification {
     private int id;
     private boolean check;
-    private List<User> users;
     private String msg;
+    private List<User> users;
 
-    public Notification(int id, boolean check, List<User> users, String msg) {
+    public Notification(int id, boolean check, String msg, List<User> users) {
         this.id = id;
         this.check = check;
-        this.users = users;
         this.msg = msg;
+        this.users = users;
     }
 
     public int getId() {
@@ -32,19 +31,19 @@ public class Notification {
         this.check = check;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
-
     public String getMsg() {
         return msg;
     }
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }

@@ -1,4 +1,4 @@
-package com.datpv134.convertobjecttojson;
+package com.datpv134.convertobjecttojson.model;
 
 public class User {
     private int id;

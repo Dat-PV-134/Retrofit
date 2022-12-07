@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.datpv134.convertobjecttojson.model.Notification;
+import com.datpv134.convertobjecttojson.model.User;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -18,18 +20,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView tvJson = findViewById(R.id.tvJson);
-
         List<User> users = new ArrayList<>();
-        users.add(new User(1, "Hello"));
-        users.add(new User(2, "World"));
+        users.add(new User(1, "Dat"));
+        users.add(new User(2, "dep trai"));
 
-        Notification notification = new Notification(1, true, users, "done");
+        Notification notification = new Notification(1, false, "Hello World", users);
 
         Gson gson = new Gson();
-        String json = gson.toJson(notification);
-        Log.e("json: ", json);
+        String strJson = gson.toJson(notification);
+        Log.e("Json: ", strJson);
 
-        tvJson.setText(json);
+        TextView tvJson = findViewById(R.id.tvJson);
+        tvJson.setText(strJson);
     }
 }
